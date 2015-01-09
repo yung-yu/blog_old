@@ -152,22 +152,56 @@ sup {
 	}
 }
 </style>
-<title>hello world</title>
+<title>Android-透明のActionBar</title>
 
 </head>
 <body>
-<h3>hello world</h3>
+<h1>Android-透明のActionBar</h1>
 
-<ul>
-<li>item1</li>
-<li>item2</li>
-<li>item3</li>
-</ul>
+<h3>如果想實做一個透明ActionBar,可以用以下程式碼完成。</h3>
+
+<!-- language: java -->
 
 
-<h3>test2</h3>
+<pre><code>import android.app.Activity;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.os.Bundle;
+import android.view.Window;
 
-<p>*
-<img src="./img/sp1.jpg" alt="" /></p>
+public class MainActivity extends Activity {
+
+ @Override
+ protected void onCreate(Bundle savedInstanceState) {
+
+  super.onCreate(savedInstanceState);
+  //設定ActionBar覆蓋在畫面的上面（浮空效果）
+  requestWindowFeature(Window.FEATURE_ACTION_BAR_OVERLAY);
+  ColorDrawable mDrawable = new ColorDrawable();
+  mDrawable.setColor(Color.BLUE);
+  mDrawable.setAlpha(100);
+  getActionBar().setBackgroundDrawable(mDrawable);
+  setContentView(R.layout.activity_main);
+
+ }
+}
+</code></pre>
+
+<h3>這段程式碼可以讓ActionBar,達到懸浮效果</h3>
+
+<pre><code>requestWindowFeature(Window.FEATURE_ACTION_BAR_OVERLAY);
+</code></pre>
+
+<h3>然後再設定背景.</h3>
+
+<pre><code>  ColorDrawable mDrawable = new ColorDrawable();
+  mDrawable.setColor(Color.BLUE);
+  mDrawable.setAlpha(100);
+  getActionBar().setBackgroundDrawable(mDrawable);
+</code></pre>
+
+<h3>結果畫面：</h3>
+
+<p><img src="./img/device-2014-11-07-220805.png" alt="" /></p>
 </body>
 </html>

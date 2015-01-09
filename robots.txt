@@ -1,0 +1,2 @@
+Sitemap: http://starbuilder.github.io/blog/sitemap/sitemap_index.xml
+User-agent: *

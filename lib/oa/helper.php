@@ -61,6 +61,7 @@ if (!function_exists ('mds')) {
             'path' => $_mds,
             'date' => $file,
             'name' => $name,
+            'file_name' => $name,
             'content' => read_file ($_mds . DIRECTORY_SEPARATOR . $file . DIRECTORY_SEPARATOR . $name . $_format),
             'tags' => tags ($_mds . DIRECTORY_SEPARATOR . $file . DIRECTORY_SEPARATOR . $_tags_file_name)
             ));
@@ -88,13 +89,7 @@ if (!function_exists ('load_view')) {
     if (!$_oa_path) return '';
 
     extract ($data);
-    global $_footer_title;
-    global $_footer_content;
-    global $_list_more;
-    global $_nav_items;
-    global $_pins;
-    global $_tags;
-    global $_list;
+    global $_navbar_mobile, $_footer, $_list_more, $_mobile_right_slides, $_nav_items, $_pins, $_tags, $_list, $_title, $_url, $_author, $_keywords, $_description, $_og;
     ob_start ();
 
     if (((bool)@ini_get ('short_open_tag') === FALSE) && (false == TRUE)) echo eval ('?>'.preg_replace ("/;*\s*\?>/", "; ?>", str_replace ('<?=', '<?php echo ', file_get_contents ($_oa_path))));
@@ -109,7 +104,7 @@ if (!function_exists ('load_view')) {
 
 if (!function_exists ('list_blocks')) {
   function list_blocks ($name, $blocks, $page_count, $tags, $tree) {
-    global $_list, $_oput_format, $_template, $_pagination_limit, $_is_show_next, $_is_show_prev;
+    global $_url, $_list, $_oput_format, $_template, $_pagination_limit, $_is_show_next, $_is_show_prev;
     $lis = array ();
 
     if ($_is_show_next && $name) array_push ($lis, array ('href' => ($name - 1) . $_oput_format, 'content' => '上一頁', 'active' => false));
@@ -121,12 +116,13 @@ if (!function_exists ('list_blocks')) {
         'blocks' => $blocks,
         'lis' => $lis,
         'tags' => $tags,
+        'my_url' => $_url . '/' . preg_replace ('#(^\.\/)#', '', $_list) . '/' . $name . $_oput_format,
         'tree' => $tree)), 'w+');
   }
 }
 if (!function_exists ('tags_blocks')) {
   function tags_blocks ($name, $blocks, $page_count, $tag, $tags, $tree) {
-    global $_tags, $_oput_format, $_template, $_pagination_limit, $_is_show_next, $_is_show_prev;
+    global $_url, $_tags, $_oput_format, $_template, $_pagination_limit, $_is_show_next, $_is_show_prev;
     $lis = array ();
 
     if ($_is_show_next && $name) array_push ($lis, array ('href' => ($name - 1) . $_oput_format, 'content' => '上一頁', 'active' => false));
@@ -144,7 +140,9 @@ if (!function_exists ('tags_blocks')) {
       load_view ($_template['tags']['view'], array (
         'blocks' => $blocks,
         'lis' => $lis,
+        'now_tag' => $tag,
         'tags' => $tags,
+        'my_url' => $_url . '/' . preg_replace ('#(^\.\/)#', '', $_tags) . '/' . $tag . '/' . $n,
         'tree' => $tree)), 'w+');
   }
 }
