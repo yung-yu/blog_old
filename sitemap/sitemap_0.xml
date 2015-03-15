@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
  <url>
+  <loc>http://starbuilder.github.io/blog/article/google_protocol_buffer.html</loc>
+  <priority>0.8</priority>
+  <changefreq>daily</changefreq>
+  <lastmod>2015-03-15</lastmod>
+ </url>
+ <url>
+  <loc>http://starbuilder.github.io/blog/article/android_qrcode_%E8%AE%80%E5%8F%96.html</loc>
+  <priority>0.8</priority>
+  <changefreq>daily</changefreq>
+  <lastmod>2015-01-18</lastmod>
+ </url>
+ <url>
+  <loc>http://starbuilder.github.io/blog/article/google_analytics_%E6%95%99%E5%AD%B8_for_android_app.html</loc>
+  <priority>0.8</priority>
+  <changefreq>daily</changefreq>
+  <lastmod>2015-01-11</lastmod>
+ </url>
+ <url>
   <loc>http://starbuilder.github.io/blog/article/android-%E9%80%8F%E6%98%8E%E3%81%AEactionbar.html</loc>
   <priority>0.8</priority>
   <changefreq>daily</changefreq>

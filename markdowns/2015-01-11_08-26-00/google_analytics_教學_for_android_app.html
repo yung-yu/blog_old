@@ -1,0 +1,227 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<style>
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", Arial, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+    color: #737373;
+    background-color: white;
+    margin: 10px 13px 10px 13px;
+}
+table {
+	margin: 10px 0 15px 0;
+	border-collapse: collapse;
+}
+td,th {	
+	border: 1px solid #ddd;
+	padding: 3px 10px;
+}
+th {
+	padding: 5px 10px;	
+}
+
+a {
+    color: #0069d6;
+}
+a:hover {
+    color: #0050a3;
+    text-decoration: none;
+}
+a img {
+    border: none;
+}
+p {
+    margin-bottom: 9px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #404040;
+    line-height: 36px;
+}
+h1 {
+    margin-bottom: 18px;
+    font-size: 30px;
+}
+h2 {
+    font-size: 24px;
+}
+h3 {
+    font-size: 18px;
+}
+h4 {
+    font-size: 16px;
+}
+h5 {
+    font-size: 14px;
+}
+h6 {
+    font-size: 13px;
+}
+hr {
+    margin: 0 0 19px;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+}
+blockquote {
+    padding: 13px 13px 21px 15px;
+    margin-bottom: 18px;
+    font-family:georgia,serif;
+    font-style: italic;
+}
+blockquote:before {
+    content:"\201C";
+    font-size:40px;
+    margin-left:-10px;
+    font-family:georgia,serif;
+    color:#eee;
+}
+blockquote p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 18px;
+    margin-bottom: 0;
+    font-style: italic;
+}
+code, pre {
+    font-family: Monaco, Andale Mono, Courier New, monospace;
+}
+code {
+    background-color: #fee9cc;
+    color: rgba(0, 0, 0, 0.75);
+    padding: 1px 3px;
+    font-size: 12px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+pre {
+    display: block;
+    padding: 14px;
+    margin: 0 0 18px;
+    line-height: 16px;
+    font-size: 11px;
+    border: 1px solid #d9d9d9;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+pre code {
+    background-color: #fff;
+    color:#737373;
+    font-size: 11px;
+    padding: 0;
+}
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:10px auto;
+    }
+}
+@media print {
+	body,code,pre code,h1,h2,h3,h4,h5,h6 {
+		color: black;
+	}
+	table, pre {
+		page-break-inside: avoid;
+	}
+}
+</style>
+<title>Google analytics 教學 For Android APP</title>
+
+</head>
+<body>
+<h2>Google analytics 教學 For Android APP</h2>
+
+<p> <a href="http://www.google.com/intl/zh-TW/analytics/">Google Analytics</a>由Ｇoogle提供訪客瀏覽人次、網頁瀏覽人次、用戶的瀏覽器、作業系統、螢幕解析度、網站熱門文章、熱門關鍵字、訪客來自於何處等等資料，可以統計和分析使用者.</p>
+
+<p>  不僅僅可以網頁,也可以用在手機APP.</p>
+
+<p>首先.先到Google Analytics<a href="http://www.google.com/intl/zh-TW/analytics/">Google Analytics 網站</a>註冊索要追蹤的APP.</p>
+
+<h3>先到以下畫面</h3>
+
+<p><img src="./img/%E6%96%B0%E5%A2%9E%E7%AE%A1%E7%90%86.png" alt="" /></p>
+
+<h3>會到新增畫面,選擇行動應用程式,並根據項目填入資料並切新增.</h3>
+
+<p><img src="./img/%E6%96%B0%E5%A2%9E%E8%B3%87%E6%BA%90.png" alt="" /></p>
+
+<h3>新增資後返回剛才畫面,</h3>
+
+<p><img src="./img/%E5%88%87%E6%8F%9B%E8%B3%87%E6%BA%90.png" alt="" /></p>
+
+<h3>進入程式碼追蹤,並取得追蹤編號.</h3>
+
+<p><img src="./img/%E8%BF%BD%E8%B9%A4%E7%B7%A8%E8%99%9F.png" alt="" /></p>
+
+<h3>接下來就是到Android加入追蹤程式碼就可以看到結果.</h3>
+
+<h3>先將Project加入Ｇoogle Service Lib</h3>
+
+<h3>到AndroidManifest.xml中</h3>
+
+<h3>在Applcation內加入</h3>
+
+<pre><code>&lt;meta-data android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" /&gt;
+</code></pre>
+
+<h3>先到res,新增xml的資料夾</h3>
+
+<pre><code>&lt;?xml version="1.0" encoding="utf-8" ?&gt;
+&lt;resources&gt;
+  &lt;string name="ga_trackingId"&gt;我的追蹤編號&lt;/string&gt;
+  &lt;!-- 可以在debug模式下追蹤--&gt;
+  &lt;bool name="ga_debug"&gt;true&lt;/bool&gt;
+  &lt;!--Enable Activity tracking--&gt;
+  &lt;bool name="ga_autoActivityTracking"&gt;false&lt;/bool&gt;
+  &lt;!--Enable automatic exception tracking--&gt;
+  &lt;bool name="ga_reportUncaughtExceptions"&gt;true&lt;/bool&gt; 
+
+&lt;/resources&gt;
+</code></pre>
+
+<h3>再到要追蹤的Ａctivity中</h3>
+
+<pre><code>        //新增GoogleAnalytics物件
+        GoogleAnalytics analytics = GoogleAnalytics.getInstance(this);
+        analytics.getLogger().setLogLevel(Logger.LogLevel.VERBOSE);
+        //取得追蹤物件新增xml設定檔
+        Tracker mTracker = analytics.newTracker(R.xml.ga);
+        //設定當前畫面名稱
+        mTracker.setScreenNascreenName("畫面名稱");
+        //送出訊息
+        mTracker.send(new HitBuilders.AppViewBuilder().build());
+</code></pre>
+
+<h3>再執行Ｐroject.就可以到<a href="http://www.google.com/intl/zh-TW/analytics/">Google Analytics</a>看到結果.</h3>
+
+<h3>詳細設定可以查看<a href="https://developers.google.com/analytics/devguides/collection/android/v4/">官方資訊</a></h3>
+</body>
+</html>

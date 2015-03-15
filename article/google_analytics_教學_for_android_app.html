@@ -1,0 +1,189 @@
+<html lang="tw">
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Language" content="zh-tw">
+    <title>google_analytics_教學_for_android_app - Andy's blog</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+
+    <meta name="robots" content="index,follow" />
+    <meta name="author" content="李永裕(Ａndy.li)" />
+    <meta name="keywords" content="李永裕(Ａndy.li) | Andy's blog" />
+    <meta name="description" content="Google analytics 教學 For Android APP Google Analytics由Ｇoogle提供訪客瀏覽人次、網頁瀏覽人次、用戶的瀏覽器、作業系統、螢幕解析度、網站熱門文章、熱門關鍵字、訪客來自於何處等等資料，可以統計和分析使用者.  不僅僅可以網頁,也可以用在手機APP.首先.先到Google AnalyticsGoogle Analytics 網站註冊索要追蹤的APP.先到以下畫面會到新增畫面,選擇行動應用程式,並根據項目填入資料並切新增.新增資後返回剛才畫面,進入程式碼追蹤,並取得追蹤編號.接下來就是到Android加入追蹤程式碼就可以看到結果.先將Project加入Ｇoogle Service…" />
+
+    <meta property="og:site_name" content="Andy's blog" />
+    <meta property="og:type" content="profile" />
+    <meta property="og:image" content="http://starbuilder.github.io/blog/markdowns/2015-01-11_08-26-00/./img/%E6%96%B0%E5%A2%9E%E7%AE%A1%E7%90%86.png" alt="" />
+    <meta property="og:title" content="google_analytics_教學_for_android_app - Andy's blog" />
+    <meta property="og:locale" content="zh_TW" />
+    <meta property="og:description" content="Google analytics 教學 For Android APP Google Analytics由Ｇoogle提供訪客瀏覽人次、網頁瀏覽人次、用戶的瀏覽器、作業系統、螢幕解析度、網站熱門文章、熱門關鍵字、訪客來自於何處等等資料，可以統計和分析使用者.  不僅僅可以網頁,也可以用在手機APP.首先.先到Google AnalyticsGoogle Analytics 網站註冊索要追蹤的APP.先到以下畫面會到新增畫面,選擇行動應用程式,並根據項目填入資料並切新增.新增資後返回剛才畫面,進入程式碼追蹤,並取得追蹤編號.接下來就是到Android加入追蹤程式碼就可以看到結果.先將Project加入Ｇoogle Service…" />
+    <meta property="og:url" content="http://starbuilder.github.io/blog/article/google_analytics_教學_for_android_app.html" />
+
+    <link href="../res/fancyBox_v2.1.5/jquery.fancybox.css" rel="stylesheet" type="text/css">
+    <link href="../res/fancyBox_v2.1.5/jquery.fancybox-buttons.css" rel="stylesheet" type="text/css">
+    <link href="../res/fancyBox_v2.1.5/jquery.fancybox-thumbs.css" rel="stylesheet" type="text/css">
+
+    <link href="../css/frame.css" rel="stylesheet" type="text/css">
+    <link href="../css/frame_pc.css" rel="stylesheet" type="text/css">
+    <link href="../css/frame_mobile.css" rel="stylesheet" type="text/css">
+    <link href="../css/article.css" rel="stylesheet" type="text/css">
+    <link href="../css/article_pc.css" rel="stylesheet" type="text/css">
+    <link href="../css/article_mobile.css" rel="stylesheet" type="text/css">
+
+    <script src="../js/ga.js" language="javascript" type="text/javascript"></script>
+    <script src="../res/jquery_v1.10.2/jquery-1.10.2.min.js" language="javascript" type="text/javascript"></script>
+    <script src="../res/oa-imgLiquid.js" language="javascript" type="text/javascript"></script>
+    <script src="../res/jquery-timeago_v1.3.1/jquery.timeago.js" language="javascript" type="text/javascript"></script>
+    <script src="../res/jquery-timeago_v1.3.1/locales/jquery.timeago.zh-TW.js" language="javascript" type="text/javascript"></script>
+    <script src="../res/jQuery-Mobile-v1.3.0/swipe.js" language="javascript" type="text/javascript"></script>
+    
+    <script src="../res/fancyBox_v2.1.5/jquery.fancybox.js" language="javascript" type="text/javascript"></script>
+    <script src="../res/fancyBox_v2.1.5/jquery.fancybox-buttons.js" language="javascript" type="text/javascript"></script>
+    <script src="../res/fancyBox_v2.1.5/jquery.fancybox-thumbs.js" language="javascript" type="text/javascript"></script>
+    <script src="../res/fancyBox_v2.1.5/jquery.fancybox-media.js" language="javascript" type="text/javascript"></script>
+
+    <script src="../js/frame.js" language="javascript" type="text/javascript"></script>
+    <script src="../js/article.js" language="javascript" type="text/javascript"></script>
+  </head>
+  <body lang="zh-tw">
+
+    <div id='right_slide' class='close'>
+      <div class='units'>
+                <div class='unit title'>Andy's Info</div>
+                            <div class='unit shimmer'>yungyu405728@gmail.com</div>
+                                <div class='unit shimmer'>職業: Android工程師</div>
+                                <div class='unit shimmer'>生日: 1988/11/08</div>
+                  </div>
+    </div>
+    <div id='slide_cover'></div>
+
+    <div id="header" class="oa-navbar">
+      <div class="oa-navbar-container">
+        <div class="oa-navbar-items clearfix">
+          <div class="oa-navbar-mobile home"><a href='../' alt="Andy's blog" title="Andy's blog"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16"><path d="M7.987 0h0.026c-0.005 0.001-0.009 0.002-0.013 0.002s-0.008-0.001-0.013-0.002zM15.424 6.834c0.771 0.771 0.771 2.023 0 2.795l-0.371 0.371h-1.053v4c0 1.104-0.896 2-2 2h-8c-1.104 0-2-0.896-2-2v-4h-1.053l-0.371-0.371c-0.771-0.772-0.771-2.024 0-2.795l6.289-6.288c0.319-0.319 0.72-0.492 1.135-0.544 0.415 0.052 0.816 0.225 1.135 0.544l6.289 6.288zM12 8h1.572c-0.042-0.17-0.112-0.334-0.244-0.468l-4.891-4.891c-0.125-0.125-0.278-0.194-0.437-0.238-0.159 0.044-0.312 0.114-0.436 0.238l-4.891 4.891c-0.133 0.134-0.203 0.298-0.245 0.468h1.572v5c0 0.553 0.447 1 1 1h1v-5h4v5h1c0.553 0 1-0.447 1-1v-5z" fill="#000000"></path></svg></a></div>
+          <div class="oa-navbar-mobile">Andy's blog</div>
+          <div class='oa-navbar-item'><a href='../' alt="Andy's blog" title="Andy's blog"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16"><path d="M7.987 0h0.026c-0.005 0.001-0.009 0.002-0.013 0.002s-0.008-0.001-0.013-0.002zM15.424 6.834c0.771 0.771 0.771 2.023 0 2.795l-0.371 0.371h-1.053v4c0 1.104-0.896 2-2 2h-8c-1.104 0-2-0.896-2-2v-4h-1.053l-0.371-0.371c-0.771-0.772-0.771-2.024 0-2.795l6.289-6.288c0.319-0.319 0.72-0.492 1.135-0.544 0.415 0.052 0.816 0.225 1.135 0.544l6.289 6.288zM12 8h1.572c-0.042-0.17-0.112-0.334-0.244-0.468l-4.891-4.891c-0.125-0.125-0.278-0.194-0.437-0.238-0.159 0.044-0.312 0.114-0.436 0.238l-4.891 4.891c-0.133 0.134-0.203 0.298-0.245 0.468h1.572v5c0 0.553 0.447 1 1 1h1v-5h4v5h1c0.553 0 1-0.447 1-1v-5z" fill="#000000"></path></svg></a></div>
+            </div>
+      </div>
+      <div class="avatar_outline">
+        <div class="avatar">
+          <img src="https://graph.facebook.com/100000117171015/picture?width=100&height=100" style="position: absolute; width: 44px; height: 44px; top: 0px; left: 0px;">
+        </div>
+      </div>
+    </div>
+
+    <div id="container" class="clearfix">
+      <div class='left'>
+        <div class='block paper article'>
+          <div class='title clearfix'>
+            <h2>google_analytics_教學_for_android_app</h2>
+            <div class='date timeago' data-time='2015-01-11 08:26:00'>2015-01-11 08:26:00</div>
+          </div>
+          <div class='content'>
+<h2>Google analytics 教學 For Android APP</h2>
+
+<p> <a href="http://www.google.com/intl/zh-TW/analytics/">Google Analytics</a>由Ｇoogle提供訪客瀏覽人次、網頁瀏覽人次、用戶的瀏覽器、作業系統、螢幕解析度、網站熱門文章、熱門關鍵字、訪客來自於何處等等資料，可以統計和分析使用者.</p>
+
+<p>  不僅僅可以網頁,也可以用在手機APP.</p>
+
+<p>首先.先到Google Analytics<a href="http://www.google.com/intl/zh-TW/analytics/">Google Analytics 網站</a>註冊索要追蹤的APP.</p>
+
+<h3>先到以下畫面</h3>
+
+<p><img src=".././markdowns/2015-01-11_08-26-00/./img/%E6%96%B0%E5%A2%9E%E7%AE%A1%E7%90%86.png" alt=""></p>
+
+<h3>會到新增畫面,選擇行動應用程式,並根據項目填入資料並切新增.</h3>
+
+<p><img src=".././markdowns/2015-01-11_08-26-00/./img/%E6%96%B0%E5%A2%9E%E8%B3%87%E6%BA%90.png" alt=""></p>
+
+<h3>新增資後返回剛才畫面,</h3>
+
+<p><img src=".././markdowns/2015-01-11_08-26-00/./img/%E5%88%87%E6%8F%9B%E8%B3%87%E6%BA%90.png" alt=""></p>
+
+<h3>進入程式碼追蹤,並取得追蹤編號.</h3>
+
+<p><img src=".././markdowns/2015-01-11_08-26-00/./img/%E8%BF%BD%E8%B9%A4%E7%B7%A8%E8%99%9F.png" alt=""></p>
+
+<h3>接下來就是到Android加入追蹤程式碼就可以看到結果.</h3>
+
+<h3>先將Project加入Ｇoogle Service Lib</h3>
+
+<h3>到AndroidManifest.xml中</h3>
+
+<h3>在Applcation內加入</h3>
+
+<pre><code>&lt;meta-data android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" /&gt;
+</code></pre>
+
+<h3>先到res,新增xml的資料夾</h3>
+
+<pre><code>&lt;?xml version="1.0" encoding="utf-8" ?&gt;
+&lt;resources&gt;
+  &lt;string name="ga_trackingId"&gt;我的追蹤編號&lt;/string&gt;
+  &lt;!-- 可以在debug模式下追蹤--&gt;
+  &lt;bool name="ga_debug"&gt;true&lt;/bool&gt;
+  &lt;!--Enable Activity tracking--&gt;
+  &lt;bool name="ga_autoActivityTracking"&gt;false&lt;/bool&gt;
+  &lt;!--Enable automatic exception tracking--&gt;
+  &lt;bool name="ga_reportUncaughtExceptions"&gt;true&lt;/bool&gt; 
+
+&lt;/resources&gt;
+</code></pre>
+
+<h3>再到要追蹤的Ａctivity中</h3>
+
+<pre><code>        //新增GoogleAnalytics物件
+        GoogleAnalytics analytics = GoogleAnalytics.getInstance(this);
+        analytics.getLogger().setLogLevel(Logger.LogLevel.VERBOSE);
+        //取得追蹤物件新增xml設定檔
+        Tracker mTracker = analytics.newTracker(R.xml.ga);
+        //設定當前畫面名稱
+        mTracker.setScreenNascreenName("畫面名稱");
+        //送出訊息
+        mTracker.send(new HitBuilders.AppViewBuilder().build());
+</code></pre>
+
+<h3>再執行Ｐroject.就可以到<a href="http://www.google.com/intl/zh-TW/analytics/">Google Analytics</a>看到結果.</h3>
+
+<h3>詳細設定可以查看<a href="https://developers.google.com/analytics/devguides/collection/android/v4/">官方資訊</a>
+</h3>
+</div>
+          <div class='info clearfix'>
+            <div class='tags all'>
+        &nbsp;&nbsp;            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class='right'>
+                <div class='pin oa_infos'>
+                <div class='message hide' data-name='google_analytics_教學_for_android_app'></div>
+                <div class='line1'></div><div class='line2'></div>
+                <a href='' target='_blank'>
+                  <div class='avatar_outline'>
+                    <div class='avatar'>
+                      <img src="https://graph.facebook.com/100000117171015/picture?width=100&height=100">
+                    </div>
+                  </div>
+                </a>
+                <div class='info info1'>
+                  <a href='' target='_blank'>
+                    李永裕（Andy）                  </a>
+                </div>
+                <div class='info info2'>yungyu405728@gmail.com</div>
+                <div class='info info3'>職業: Android工程師</div>
+                <div class='info info4'>生日: 1988/11/08</div>
+              </div>
+                    <div class='pin githubbadge'><div class='title'>Andy's GitHub</div><iframe src="http://githubbadge.appspot.com/starbuilder" frameBorder="0"></iframe></div>
+            </div>
+    </div>
+
+    <div id="footer" class="oa-footer">
+      <div class="oa-footer-desc">
+        <div class="oa-footer-split-line"><hr></div>
+        <div class='oa-footer-content'>Andy's Blog © 2015<br />如有 <u>相關問題</u> 歡迎來信 <b>yungyu405728@gmail.com</b> </div>
+      </div>
+    </div>
+  </body>
+</html>
